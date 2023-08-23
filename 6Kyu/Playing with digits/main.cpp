@@ -14,9 +14,8 @@ public:
       sum += pow(intValue, p);
       p++;
     }
-    int Equals = sum / n;
     if (sum % n == 0){
-      return Equals;
+      return sum / n;
     }
     return -1;
   }
