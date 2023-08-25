@@ -1,5 +1,4 @@
 #include <vector>
-using namespace std;
 int maxSequence(const std::vector<int>& arr){
   int maxSum = 0;
   for (int i = 0; i < arr.size(); i++){
