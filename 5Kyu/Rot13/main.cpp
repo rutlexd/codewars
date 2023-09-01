@@ -4,25 +4,25 @@ using namespace std;
 string rot13(string msg)
 {
   string res = "";
-  
-  
+  int hardLvl = 13;
+
   for(unsigned long i = 0; i < msg.length(); i++){
     int letter = msg[i];
     
-    if (letter >= 97 && letter <= 122){
-      if (letter + 13 > 122){
-        res += (96 + (letter + 13 - 122));
+    if (letter >= 'a' && letter <= 'z'){
+      if (letter + hardLvl > 122){
+        res += (96 + (letter + hardLvl - 'z'));
       }
       else{
-          res += letter + 13;
+        res += letter + hardLvl;
       }
     }
-    else if(letter >= 65 && letter <= 90){
-      if (letter + 13 > 90){
-        res += (64 + (letter + 13 - 90));
+    else if(letter >= 'A' && letter <= 'Z'){
+      if (letter + hardLvl > 'Z'){
+        res += (64 + (letter + hardLvl - 'Z'));
       }
       else{
-          res += letter + 13;
+        res += letter + hardLvl;
       }
     }
     else{
@@ -31,3 +31,4 @@ string rot13(string msg)
   }
   
   return res;
+}
